@@ -1,8 +1,12 @@
 import "./App.css";
 
 // const number = 5555;
-// const singer = { name: "Dr. Mahfiz", job: "Singer" };
-// const singer2 = { name: "Eva Rahman", job: "Singer2" };
+const singers = [
+  { name: "Dr. Mahfiz", job: "Singer" }, 
+  { name: "Eva Rahman", job: "Singer2" },
+  { name: "Agun", job: "sopno" },
+  { name: "Shuvro", job: "Pathor" },
+];
 
 // const singerStyle = {
 //   color: "purple",
@@ -12,11 +16,22 @@ import "./App.css";
 // };
 
 function App() {
+  const nayoks = ['Rubel', 'BappaRaz', 'Kuber', 'Jashim', 'Salman Shah', 'Riyaz', 'Razzak', 'Anwar Hossain'];
+
   return (
     <div className="App">
-      <Person name="Rubel" nayika="Moushumi"></Person>
-      <Person name="BappaRaz" nayika="Cheka"></Person>
-      <Person name="kuber" nayika="Kopila"></Person>
+      {
+        nayoks.map(nayok => <li>Name: {nayok}</li>)
+      }
+      {
+        // nayoks.map(nayok => <Person name={nayok}></Person>)
+      }
+      {
+        singers.map(singer => <Person name= {singer.name} nayika={singer.job}></Person>)
+      }
+      {/* <Person name={nayoks[0]} nayika="Moushumi"></Person>
+      <Person name={nayoks[1]} nayika="Cheka"></Person>
+      <Person name={nayoks[2]} nayika="Kopila"></Person> */}
       <h5>New Component. YAY</h5>
       <p>Rock mama, React mama.</p>
       <Friend movie="Shingham" phone='01777'></Friend>
@@ -29,7 +44,7 @@ function Person(props) {
   return (
     <div className="person">
       <h1>{props.name}</h1>
-      <p>Nayika: {props.nayika}</p>
+      <p>{props.nayika}</p>
     </div>
   );
 }
